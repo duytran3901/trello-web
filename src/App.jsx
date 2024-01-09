@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button'
-import HomeIcon from '@mui/material/Home'
+import HomeIcon from '@mui/icons-material/Home'
 import { pink } from '@mui/material/colors'
 
 function App() {

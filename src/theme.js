@@ -3,23 +3,74 @@ import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
 
 const theme = extendTheme({
   trello: {
-    appBarHeight: '48px',
-    boardBarHeight: '58px'
+    appBarHeight: '66px',
+    boardBarHeight: '60px'
   },
   colorSchemes: {
     light: {
       palette: {
         primary: teal,
         secondary: deepOrange
-      },
-      spacing: (factor) => `${0.25 * factor}rem`
+      }
     },
     dark: {
       palette: {
         primary: cyan,
         secondary: orange
-      },
-      spacing: (factor) => `${0.25 * factor}rem`
+      }
+    }
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '*::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb': {
+            backgroundColor: '#bdc3c7',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#00b894'
+          }
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none'
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.75rem'
+        })
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          fontSize: '0.75rem',
+          '.MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.light
+          },
+          '&:hover': {
+            '.MuiOutlinedInput-notchedOutline': {
+              borderColor: theme.palette.primary.main
+            }
+          },
+          '& fieldset': {
+            borderWidth: '1px !important'
+          }
+        })
+      }
     }
   }
 })

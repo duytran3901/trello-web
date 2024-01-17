@@ -32,7 +32,7 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 34, height: 34 }} src='https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg' alt='Avatar' />
+          <Avatar sx={{ width: 36, height: 36 }} src='https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg' alt='Avatar' />
         </IconButton>
       </Tooltip>
 

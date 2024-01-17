@@ -16,8 +16,13 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import Tooltip from '@mui/material/Tooltip'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
+import InputAdornment from '@mui/material/InputAdornment'
+import SearchIcon from '@mui/icons-material/Search'
+import CloseIcon from '@mui/icons-material/Close'
+import { useState } from 'react'
 
 function AppBar() {
+  const [searchValue, setSearchValue] = useState('')
   return (
     <Box px={2} sx={{
       width: '100%',
@@ -26,9 +31,10 @@ function AppBar() {
       justifyContent: 'space-between',
       alignItems: 'center',
       gap: 2,
-      overflowX: 'auto'
+      overflowX: 'auto',
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#2c3e50' : '#1565c0')
     }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, color: 'primary.main' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, color: 'white' }}>
         <AppsIcon />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <SvgIcon component={TrelloIcon} fontSize='small' inheritViewBox />
@@ -39,16 +45,63 @@ function AppBar() {
           <Recent />
           <Starred />
           <Templates />
-          <Button variant="outlined" startIcon={<LibraryAddIcon />}>Create</Button>
+          <Button
+            variant="outlined"
+            startIcon={<LibraryAddIcon />}
+            sx={{
+              color: 'white',
+              border: 'none',
+              '&:hover': { border: 'none' }
+            }}
+          >
+            Create
+          </Button>
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, color: 'primary.main' }}>
-        <TextField id="outlined-search" label="Search..." type="search" size='small' sx={{ minWidth: '120px' }}/>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, color: 'white' }}>
+        <TextField
+          id="outlined-search"
+          label="Search"
+          type="text"
+          size='small'
+          value={searchValue}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: 'white' }}/>
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <CloseIcon
+                fontSize='small'
+                sx={{
+                  color: 'white',
+                  display: searchValue ? 'block' : 'none',
+                  cursor: 'pointer'
+                }}
+                onClick={() => setSearchValue('')}
+              />
+            )
+          }}
+          sx={{
+            minWidth: '120px',
+            maxWidth: '170px',
+            '& label': { color: 'white' },
+            '& input': { color: 'white' },
+            '& label.Mui-focused': { color: 'white' },
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': { borderColor: 'white' },
+              '&:hover fieldset': { borderColor: 'white' },
+              '&.Mui-focused fieldset': { borderColor: 'white' }
+            }
+          }}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
         <ModeSelect />
 
         <Tooltip title='Notifications'>
-          <Badge color='secondary' variant='dot' sx={{ cursor: 'pointer' }}>
+          <Badge color='warning' variant='dot' sx={{ cursor: 'pointer' }}>
             <NotificationsNoneIcon />
           </Badge>
         </Tooltip>

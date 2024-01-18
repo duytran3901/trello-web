@@ -36,8 +36,8 @@ function boardBar() {
       paddingX: 2,
       gap: 2,
       overflowX: 'auto',
-      borderBottom: '1px solid #00bfa5',
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
+      '&::-webkit-scrollbar-track': { m: 2 }
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip
@@ -91,7 +91,10 @@ function boardBar() {
               width: 34,
               height: 34,
               fontSize: '16px',
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': { bgcolor: '#a4b0be' }
             }
           }}
         >
@@ -99,19 +102,19 @@ function boardBar() {
             <Avatar alt="DuyTran" src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg" />
           </Tooltip>
           <Tooltip title='BunTrinh'>
-            <Avatar alt="DuyTran" src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <Avatar alt="BunTrinh" src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           </Tooltip>
           <Tooltip title='HuongTrinh'>
-            <Avatar alt="DuyTran" src="https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <Avatar alt="HuongTrinh" src="https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           </Tooltip>
           <Tooltip title='Songohan'>
-            <Avatar alt="DuyTran" src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <Avatar alt="Songohan" src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           </Tooltip>
           <Tooltip title='KatoriItto'>
-            <Avatar alt="DuyTran" src="https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <Avatar alt="KatoriItto" src="https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           </Tooltip>
           <Tooltip title='YuraKazuma'>
-            <Avatar alt="DuyTran" src="https://images.pexels.com/photos/1379640/pexels-photo-1379640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <Avatar alt="YuraKazuma" src="https://images.pexels.com/photos/1379640/pexels-photo-1379640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
           </Tooltip>
           <Tooltip title='DuyTran'>
             <Avatar alt="DuyTran" src="https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />

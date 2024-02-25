@@ -26,7 +26,8 @@ function Column({ column }) {
     id: column._id,
     data: { ...column }
   })
-  const dndKitColumnStyle = {
+  const dndKitColumnStyles = {
+    touchAction: 'none',
     transform: CSS.Translate.toString(transform),
     transition,
     height: '100%',
@@ -38,7 +39,11 @@ function Column({ column }) {
   const handleClose = () => setAnchorEl(null)
   const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
   return (
-    <div ref={setNodeRef} style={dndKitColumnStyle} {...attributes}>
+    <div
+      ref={setNodeRef}
+      style={dndKitColumnStyles}
+      {...attributes}
+    >
       <Box {...listeners}
         sx={{
           minWidth: '300px',

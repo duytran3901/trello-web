@@ -29,7 +29,8 @@ function BoardContent({
   createNewCard,
   moveColumns,
   moveCardInTheSameColumn,
-  moveCardToDifferentColumn
+  moveCardToDifferentColumn,
+  deleteColumnDetails
 }) {
   // Yêu cầu kéo 10px thì kích hoạt drag drop
   const mouseSensor = useSensor(MouseSensor, { activationConstraint: { distance: 10 } })
@@ -274,6 +275,7 @@ function BoardContent({
           columns={orderedColumns}
           createNewColumn={createNewColumn}
           createNewCard={createNewCard}
+          deleteColumnDetails={deleteColumnDetails}
         />
         <DragOverlay dropAnimation={dropAnimation}>
           {!activeDragItemType && null}

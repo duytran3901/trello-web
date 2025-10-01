@@ -11,7 +11,7 @@ export default defineConfig({
     react(),
     svgr()
   ],
-  base: '/trello-web',
+  base: '/',
   resolve: {
     alias: [
       { find: '~', replacement: '/src' }
